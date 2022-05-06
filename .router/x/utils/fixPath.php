@@ -29,5 +29,11 @@ return function (string $path) : string {
 
   $result = implode(DIRECTORY_SEPARATOR, $absolutes);
 
+  if (DIRECTORY_SEPARATOR === '/') {
+    if (substr($result, 0, 1) !== '/') {
+      $result = '/' . $result;
+    }
+  }
+
   return $result;
 };
