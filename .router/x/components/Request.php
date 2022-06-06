@@ -37,10 +37,8 @@ class Request {
     }
 
     $dir = explode(DIRECTORY_SEPARATOR, dirname(__DIR__, 3));
-    $base = end($dir);
     $uri = explode('/', $_SERVER['REQUEST_URI']);
-    $baseIndex = array_search($base, $uri);
-    array_splice($uri, $baseIndex + 1);
+    array_splice($uri, array_search(end($dir), $uri) + 1);
     $uri = implode('/', $uri);
     $this->baseURL = $this->protocol . '://' . $_SERVER['HTTP_HOST'] . $uri . '/';
     $this->uri = strtok('/' . str_replace($this->baseURL, '', $this->url), '?');
