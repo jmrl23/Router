@@ -101,7 +101,7 @@ class Response {
 
   public function redirect(string $path) {
     $baseURL = $this->ref->REQUEST->baseURL;
-    $this->header('location', $baseURL . ltrim('/', $path));
+    $this->header('location', $baseURL . ltrim($path, '/'));
     exit;
   }
 
