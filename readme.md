@@ -145,6 +145,17 @@ Assuming an instance is stored into a `$router` variable.
   # outputs `Hello, World!`.
   # curl -X DELETE http://localhost/app/example
   ```
+**$router->serve(string $path, string $prefix = '/')**
+
+  - Serve static files inside a directory
+
+  ```php
+  $router->serve(__DIR__ . '/public', '/static');
+  
+  # outputs content of example.txt inside the public directory
+  # curl -X GET http://localhost/app/static/example.txt
+  ```
+
 ### Callback structure
 
 A callback used into the router method has 3 parameters.
