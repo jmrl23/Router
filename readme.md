@@ -241,7 +241,7 @@ function ($request, $response, $next) {
 
   - Response templated html document.
   - content-type: `text/html; charset=UTF-8`.
-  - Before using this, if you does not yet set your views directory, you must call the `$router->setViews(string $absolutePath)` to set it.
+  - Before using this, if you does not yet set your views directory, you must call the `$router->views(string $absolutePath)` to set it.
   - Data inside the `$data` array will be available to your template document if it's extension is `.php`.
   - Inside a template, you also can access properties of `$request` object such as `baseURL`, `method`, `headers`, etc.
 
@@ -264,11 +264,8 @@ Every path parameters should always supply an `absolute path`.
 # example
 # instead of giving..
 
-$path = './folder';
-or
-$path = 'folder';
+$path = './folder'; or $path = 'folder';
 
 # use
-
 $path = __DIR__ . '/folder';
 ```
